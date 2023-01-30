@@ -11,6 +11,8 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const confirm = document.getElementById("confirm");
+
 let form = document.getElementById("formulaire");
 let firstName = document.getElementById("first");
 let blockFirstName = document.getElementById("blockFirstName");
@@ -22,7 +24,15 @@ let birthDate = document.getElementById("birthdate");
 let blockBirthDate = document.getElementById("blockBirthDate");
 let quantity = document.getElementById("quantity");
 let blockQuantity = document.getElementById("blockQuantity");
-
+let location1 = document.getElementById("location1");
+let location2 = document.getElementById("location2");
+let location3 = document.getElementById("location3");
+let location4 = document.getElementById("location4");
+let location5 = document.getElementById("location5");
+let location6 = document.getElementById("location6");
+let blockRadio = document.getElementById("blockRadio");
+let checkbox1 = document.getElementById("checkbox1");
+let blockCheckbox = document.getElementById("blockCheckbox");
 
 /////////////////////////// launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -32,14 +42,12 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+//////////////////////////////////////// SOUMISSION FORMULAIRE
 function dataValid(block) {
   block.dataset.error = "";
   block.dataset.errorVisible = "false";
 }
-
-//////////////////////////////////////// SOUMISSION FORMULAIRE
 form.addEventListener('submit', (e) => {
-
   //////////////// VERIF PRENOM
   if (firstName.value == "" || firstName.value.length < 2) { // ou if(!firstName.value) 
     e.preventDefault();
@@ -77,25 +85,39 @@ form.addEventListener('submit', (e) => {
     dataValid(blockBirthDate);
   }
   //////////////// VERIF NB TOURNOIS
-  if (isNaN(quantity.value)) {
-    e.preventDefault();
-    blockQuantity.dataset.error = "Vous devez entrer un nombre.";
-    blockQuantity.dataset.errorVisible = "true";
-  } else {
-    dataValid(blockQuantity);
+  function validateQuantity(number) {
+    let regex = /^([0-9]){1,2}$/;
+    if (!regex.test(number.value)) {
+      e.preventDefault();
+      blockQuantity.dataset.error = "Vous devez entrer un nombre entre 0 et 99.";
+      blockQuantity.dataset.errorVisible = "true";
+    } else {
+      dataValid(blockQuantity);
+    }
   }
-  // => limiter entre 0 et 99
-
-
+  validateQuantity(quantity);
+  //////////////// VERIF TOURNOI COCHÉ
+  if (!location1.checked && !location2.checked && !location3.checked && !location4.checked && !location5.checked && !location6.checked) {
+    e.preventDefault();
+    blockRadio.dataset.error = "Vous devez choisir une option.";
+    blockRadio.dataset.errorVisible = "true";
+  } else {
+    dataValid(blockRadio);
+  }
+  //////////////// VERIF COND UTILISATION
+  if (!checkbox1.checked) {
+    e.preventDefault();
+    blockCheckbox.dataset.error = "Vous devez vérifier que vous acceptez les termes et conditions.";
+    blockCheckbox.dataset.errorVisible = "true";
+  } else {
+    dataValid(blockCheckbox);
+  }
 });
 
-// vérification quel tournoi cette année (Un bouton radio coché au minimum)
-// "Vous devez choisir une option."
-
-// vérification cond utilisation (obligatoirement cochées)
-// "Vous devez vérifier que vous acceptez les termes et conditions."
+// si formulaire valide -> div classe confirm en display "flex"
+// définir fonction validate() qui retourne "true"
 
 
-// confirmation utilisateur : "merci pour votre inscription"
+
 
 // fonctionnalité du bouton "close"

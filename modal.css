@@ -221,7 +221,7 @@ input {
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
-  text-align: right;
+  text-align: left;
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
@@ -339,6 +339,37 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+/******************************************************************************************/
+ .confirm {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  max-height: 900px;
+  max-width: 500px;
+  background: #232323;
+  /* overflow: auto;  */
+}
+.confirm p {
+  margin: auto;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: normal;
+}
+.confirm button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  padding: 10px 80px;
+}
+/******************************************************************************************/
 /* custom select styles */
 .custom-select {
   position: relative;
