@@ -340,7 +340,7 @@ input[data-error]::after {
   border: 0;
 }
 /******************************************************************************************/
- .confirm {
+ .confirm-page {
   display: none;
   position: fixed;
   z-index: 1;
@@ -349,19 +349,19 @@ input[data-error]::after {
   transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
-  max-height: 900px;
+  max-height: 850px;
   max-width: 500px;
   background: #232323;
-  /* overflow: auto;  */
+  border-radius: 10px;
 }
-.confirm p {
+.confirm-page p {
   margin: auto;
   text-align: center;
   font-size: 2.5rem;
   color: #fff;
   font-weight: normal;
 }
-.confirm button {
+.confirm-page button {
   position: absolute;
   bottom: 30px;
   left: 50%;

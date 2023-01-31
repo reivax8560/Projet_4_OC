@@ -47,39 +47,39 @@
 
     <div class="bground">
       <div class="content">
-        <span class="close"></span>
+        <span class="close" id="closeForm"></span>
         <div class="modal-body">
 
-          <form id="formulaire" name="reserve" action="index.html" method="get" onsubmit="return validate();">
+          <form id="formulaire" name="reserve" method="GET" action="index.html">
 
-            <div class="formData" id="blockFirstName">
+            <div class="formData">
               <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" /><br>
             </div>
 
-            <div class="formData" id="blockLastName">
+            <div class="formData">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" /><br>
             </div>
 
-            <div class="formData" id="blockEmail">
+            <div class="formData">
               <label for="email">E-mail</label><br>
               <input class="text-control" id="email" name="email" /><br>
             </div>
 
-            <div class="formData" id="blockBirthDate">
+            <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
             </div>
 
-            <div class="formData" id="blockQuantity">
+            <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input class="text-control" type="text" id="quantity" name="quantity">
             </div>
 
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
 
-            <div class="formData" id="blockRadio">
+            <div class="formData">
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
@@ -106,7 +106,7 @@
                 Portland</label>
             </div>
 
-            <div class="formData" id="blockCheckbox">
+            <div class="formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
               <label class="checkbox2-label" for="checkbox1" required>
                 <span class="checkbox-icon"></span>
@@ -130,7 +130,8 @@
       </div>
     </div>
 
-    <div class="confirm" id="confirm">
+    <div class="confirm-page" id="confirmpage">
+      <span class="close" id="closeConfirmpage"></span>
       <p>Merci pour votre inscription</p>
       <button class="modal-btn">Fermer</button>
     </div>
