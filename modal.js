@@ -29,7 +29,8 @@ const location5 = document.getElementById("location5");
 const location6 = document.getElementById("location6");
 const checkbox1 = document.getElementById("checkbox1");
 const confirmPage = document.getElementById("confirmpage");
-const closeConfirmpage = document.getElementById("closeConfirmpage");
+const closeConfirmpage = document.querySelectorAll(".closeConfirmpage");
+
 const regex1 = /^([A-Za-zàâéèëêïîôùüçœ\-\']){2,}$/;
 const regex2 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const regex3 = /^([0-9]){1,2}$/;
@@ -37,12 +38,7 @@ const regex3 = /^([0-9]){1,2}$/;
 modalBtn.forEach((btn) => btn.addEventListener("click", () => {
   modalbg.style.display = "block";
 }));
-
-// modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-// function launchModal() {
-//   modalbg.style.display = "block";
-// }
-
+//////////////////////////////////////// FERMETURE DU FORMULAIRE
 closeForm.addEventListener('click', () => {
   modalbg.style.display = "none";
 });
@@ -99,13 +95,15 @@ form.addEventListener('submit', (e) => {
   } else {
     dataValid(formData[6]);
   }
-
+  //////////////// AFFICHAGE PAGE DE CONFIRM (SI FORMULAIRE VALIDE)
   if (formData[0].dataset.errorVisible == "false" && formData[1].dataset.errorVisible == "false" && formData[2].dataset.errorVisible == "false" && formData[3].dataset.errorVisible == "false" && formData[4].dataset.errorVisible == "false" && formData[5].dataset.errorVisible == "false" && formData[6].dataset.errorVisible == "false") {
     modalbg.style.display = "none";
     confirmPage.style.display = "flex";
   }
 });
-
-closeConfirmpage.addEventListener('click', () => {
+////////////////// FERMETURE PAGE DE CONFIRM
+closeConfirmpage.forEach((btn) => btn.addEventListener('click', () => {
   confirmPage.style.display = "none";
-});
+  modalbg.style.display = "none";
+}));
+
