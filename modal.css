@@ -1,14 +1,14 @@
 :root {
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
-  --font-slab: var(--font-default);
-  --modal-duration: 0.8s;
+  --font-slab: var(--font-default);  
+  --modal-duration: 0.8s;   
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-/* Landing Page */
+/*                          Landing Page       */
 
 body {
   margin: 0;
@@ -105,7 +105,6 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    /* margin-top: -15px; */
   }
 } 
 
@@ -116,7 +115,6 @@ main {
   padding-top: 0.5vw;
   padding-left: 2vw;
   padding-right: 2vw;
-  /* margin: 1px 20px 15px; */
   border-radius: 2rem;
   text-align: justify;
 
@@ -234,12 +232,6 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -341,7 +333,7 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
-/******************************************************************************************/
+/*****************************************************************************/
  .confirm-page {
   display: none;
   position: fixed;
@@ -371,7 +363,7 @@ input[data-error]::after {
   font-size: 1rem;
   padding: 10px 80px;
 }
-/******************************************************************************************/
+/*****************************************************************************/
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -438,7 +430,7 @@ input[data-error]::after {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
-/* custom select end */
+/* custom select end ****************************************************************************/
 .text-label {
   font-weight: normal;
   font-size: 16px;
@@ -517,6 +509,7 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
+/*///////////////////////////////////////////////////////////////////////////*/
 @media screen and (max-width: 768px) {
   body {
     width: 100%;
